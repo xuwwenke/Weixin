@@ -1,4 +1,4 @@
-const formatMsg = require('./fmtwxmsg');
+﻿const formatMsg = require('./fmtwxmsg');
 
 function help() {
     return `这是一个消息回复测试程序，会把消息原样返回，但是目前不支持视频类型的消息`;
@@ -19,7 +19,11 @@ function userMsg(wxmsg, retmsg) {
             retmsg.msgtype = 'text';
             return formatMsg(retmsg);
 
-        } else {
+        } else if(wxmsg.Content == 'who'){
+			retmsg.msg = '姓名：薛文科；学号：2017012019；班级：7班';
+            retmsg.msgtype = 'text';
+            return formatMsg(retmsg);
+	    }else {
             retmsg.msg = wxmsg.Content;
             retmsg.msgtype = wxmsg.MsgType;
             return formatMsg(retmsg);
