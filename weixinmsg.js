@@ -20,10 +20,10 @@ function userMsg(wxmsg, retmsg) {
             return formatMsg(retmsg);
 
         } else if(wxmsg.Content == 'who'){
-			retmsg.msg = '姓名：薛文科；学号：2017012019；班级：7班';
+	    retmsg.msg = '姓名：薛文科；学号：2017012019；班级：7班';
             retmsg.msgtype = 'text';
             return formatMsg(retmsg);
-	    }else {
+	}else {
             retmsg.msg = wxmsg.Content;
             retmsg.msgtype = wxmsg.MsgType;
             return formatMsg(retmsg);
